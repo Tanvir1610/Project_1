@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - For Life Trading India</title>
+    <link rel="stylesheet" href="css/dashboard-enchanced.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <!-- Header -->
+        <header class="dashboard-header">
+            <div class="header-content">
+                <div class="header-left">
+                    <div class="menu-icon" id="mobile-menu-btn">
+                        <i class="fas fa-bars"></i>
+                    </div>
+                    <h1 class="dashboard-title">Dashboard</h1>
+                </div>
+                <div class="header-right">
+                    <div class="welcome-section">
+                        <span class="welcome-text" id="welcome-text">Welcome LIFE10002</span>
+                    </div>
+                    <div class="profile-icon">
+                        <i class="fas fa-user-circle"></i>
+                    </div>
+                    <button class="logout-btn" id="logout-btn">
+                        <i class="fas fa-sign-out-alt"></i>
+                        <span class="logout-text">Logout</span>
+                    </button>
+                </div>
+            </div>
+        </header>
+
+        <!-- User Info Section -->
+        <div class="user-info-section">
+            <div class="user-profile">
+                <div class="user-avatar">
+                    <i class="fas fa-building"></i>
+                </div>
+                <div class="user-details">
+                    <h3 class="company-name" id="company-name">4LIFE TRADING INDIA</h3>
+                    <p class="user-id">User ID: <span id="user-id">LIFE10002</span></p>
+                    <p class="user-email">Email: <span id="user-email">info@forlifetradingindia.com</span></p>
+                </div>
+            </div>
+            <div class="account-status">
+                <span class="status-label">Account Status</span>
+                <span class="status-value active" id="account-status">Active</span>
+            </div>
+        </div>
+
+        <!-- Total Income Banner -->
+        <div class="total-income-banner">
+            <div class="income-content">
+                <span class="income-label">Total Income</span>
+                <span class="income-amount" id="total-income-amount">₹175.00</span>
+            </div>
+        </div>
+
+        <!-- Dashboard Grid -->
+        <div class="dashboard-grid">
+            <!-- My Team Card -->
+            <div class="dashboard-card my-team-card">
+                <div class="card-header">
+                    <div class="card-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3>My Team</h3>
+                </div>
+                <div class="card-content">
+                    <div class="main-stat">
+                        <span class="stat-label">Team Total</span>
+                        <span class="stat-value" id="team-total">3</span>
+                    </div>
+                    <div class="sub-stats">
+                        <div class="sub-stat">
+                            <span>Rank: <strong id="user-rank">Newcomer</strong></span>
+                        </div>
+                        <div class="sub-stat">
+                            <span>Referrals: <strong id="referrals-count">3</strong></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- My Direct Card -->
+            <div class="dashboard-card my-direct-card">
+                <div class="card-header">
+                    <div class="card-icon">
+                        <i class="fas fa-user-plus"></i>
+                    </div>
+                    <h3>My Direct</h3>
+                </div>
+                <div class="card-content">
+                    <div class="main-stat">
+                        <span class="stat-value" id="active-directs">3</span>
+                        <span class="stat-label">Active</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Daily Income Card -->
+            <div class="dashboard-card daily-income-card">
+                <div class="card-header">
+                    <div class="card-icon">
+                        <i class="fas fa-dollar-sign"></i>
+                    </div>
+                    <h3>Daily Income</h3>
+                </div>
+                <div class="card-content">
+                    <div class="main-stat">
+                        <span class="stat-value" id="daily-income">₹15.00</span>
+                    </div>
+                    <div class="sub-stats">
+                        <span class="balance-text">Balance: ₹<span id="daily-balance">175.00</span></span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Daily Team Income Card -->
+            <div class="dashboard-card daily-team-income-card">
+                <div class="card-header">
+                    <div class="card-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>Daily Team Income</h3>
+                </div>
+                <div class="card-content">
+                    <div class="main-stat">
+                        <span class="stat-value" id="daily-team-income">₹0.00</span>
+                    </div>
+                    <div class="sub-stats">
+                        <span class="balance-text">Total Earnings: ₹<span id="team-earnings">175.00</span></span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Rank Rewards Card -->
+            <div class="dashboard-card rank-rewards-card">
+                <div class="card-header">
+                    <div class="card-icon">
+                        <i class="fas fa-trophy"></i>
+                    </div>
+                    <h3>Rank Rewards</h3>
+                </div>
+                <div class="card-content">
+                    <div class="main-stat">
+                        <span class="stat-value" id="rank-rewards">₹0.00</span>
+                    </div>
+                    <div class="sub-stats">
+                        <div class="rank-info">
+                            <span>Current: <strong id="current-rank">Newcomer</strong></span>
+                            <span>Next: <strong id="next-rank">BRONZE</strong></span>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 15%"></div>
+                        </div>
+                        <span class="progress-text">3/20 (15%)</span>
+                        <button class="view-more-btn">View More</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Self Income Card -->
+            <div class="dashboard-card self-income-card">
+                <div class="card-header">
+                    <div class="card-icon">
+                        <i class="fas fa-chart-bar"></i>
+                    </div>
+                    <h3>Self Income</h3>
+                </div>
+                <div class="card-content">
+                    <div class="main-stat">
+                        <span class="stat-value" id="self-income">₹10.00</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Matrix Level Income Card -->
+            <div class="dashboard-card matrix-income-card">
+                <div class="card-header">
+                    <div class="card-icon">
+                        <i class="fas fa-th"></i>
+                    </div>
+                    <h3>Matrix Level Income</h3>
+                </div>
+                <div class="card-content">
+                    <div class="main-stat">
+                        <span class="stat-value" id="matrix-income">₹0.00</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Direct Bonus Card -->
+            <div class="dashboard-card direct-bonus-card">
+                <div class="card-header">
+                    <div class="card-icon">
+                        <i class="fas fa-gift"></i>
+                    </div>
+                    <h3>Direct Bonus</h3>
+                </div>
+                <div class="card-content">
+                    <div class="main-stat">
+                        <span class="stat-value" id="direct-bonus">₹150.00</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Income Wallet Card -->
+            <div class="dashboard-card income-wallet-card">
+                <div class="card-header">
+                    <div class="card-icon">
+                        <i class="fas fa-wallet"></i>
+                    </div>
+                    <h3>Income Wallet</h3>
+                </div>
+                <div class="card-content">
+                    <div class="main-stat">
+                        <span class="stat-value" id="income-wallet">₹175.00</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Investment Wallet Card -->
+            <div class="dashboard-card investment-wallet-card">
+                <div class="card-header">
+                    <div class="card-icon">
+                        <i class="fas fa-chart-pie"></i>
+                    </div>
+                    <h3>Investment Wallet</h3>
+                </div>
+                <div class="card-content">
+                    <div class="main-stat">
+                        <span class="stat-value" id="investment-wallet">₹5991.20</span>
+                        <span class="change-indicator negative">-0.13%</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Crypto Wallet Card -->
+            <div class="dashboard-card crypto-wallet-card">
+                <div class="card-header">
+                    <div class="card-icon">
+                        <i class="fab fa-bitcoin"></i>
+                    </div>
+                    <h3>Crypto Wallet</h3>
+                </div>
+                <div class="card-content">
+                    <div class="main-stat">
+                        <span class="stat-value" id="crypto-wallet">494.41 FLT Coin</span>
+                        <span class="change-indicator positive">+0.08%</span>
+                    </div>
+                    <div class="crypto-actions">
+                        <button class="buy-btn">Buy</button>
+                        <button class="sell-btn">Sell</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/auth.js"></script>
+    <script src="js/dashboard-enchanced.js"></script>
+    <script src="js/animations.js"></script>
+    
+    <script>
+        // Enhanced Dashboard Authentication and Management
+        class SecureDashboard {
+            constructor() {
+                this.userData = null;
+                this.isInitialized = false;
+                this.init();
+            }
+
+            init() {
+                // Check authentication first
+                if (!this.checkAuthentication()) {
+                    return; // Stop initialization if not authenticated
+                }
+
+                this.loadUserData();
+                this.setupEventListeners();
+                this.updateDashboard();
+                this.isInitialized = true;
+                console.log('Dashboard initialized successfully');
+            }
+
+            checkAuthentication() {
+                const isLoggedIn = localStorage.getItem('isLoggedIn');
+                const sessionActive = localStorage.getItem('sessionActive');
+                const userData = localStorage.getItem('userData');
+                const loginTime = localStorage.getItem('loginTime');
+
+                console.log('Checking authentication:', {
+                    isLoggedIn,
+                    sessionActive,
+                    hasUserData: !!userData,
+                    loginTime
+                });
+
+                if (!isLoggedIn || isLoggedIn !== 'true' || !sessionActive || sessionActive !== 'true' || !userData) {
+                    console.log('Authentication failed, redirecting to login');
+                    this.redirectToLogin();
+                    return false;
+                }
+
+                // Check session timeout (24 hours)
+                if (loginTime) {
+                    const currentTime = new Date().getTime();
+                    const sessionAge = currentTime - parseInt(loginTime);
+                    const maxAge = 24 * 60 * 60 * 1000; // 24 hours
+
+                    if (sessionAge > maxAge) {
+                        console.log('Session expired, redirecting to login');
+                        this.clearSessionAndRedirect();
+                        return false;
+                    }
+                }
+
+                return true;
+            }
+
+            loadUserData() {
+                try {
+                    const storedData = localStorage.getItem('userData');
+                    if (storedData) {
+                        this.userData = JSON.parse(storedData);
+                        console.log('User data loaded:', this.userData.id);
+                    } else {
+                        throw new Error('No user data found');
+                    }
+                } catch (error) {
+                    console.error('Error loading user data:', error);
+                    this.clearSessionAndRedirect();
+                }
+            }
+
+            setupEventListeners() {
+                // Logout button
+                const logoutBtn = document.getElementById('logout-btn');
+                if (logoutBtn) {
+                    logoutBtn.addEventListener('click', (e) => {
+                        e.preventDefault();
+                        this.handleLogout();
+                    });
+                }
+
+                // Prevent accidental page refresh
+                window.addEventListener('beforeunload', (e) => {
+                    if (!this.isLoggingOut) {
+                        e.preventDefault();
+                        e.returnValue = '';
+                    }
+                });
+
+                // Handle visibility change to extend session
+                document.addEventListener('visibilitychange', () => {
+                    if (!document.hidden && this.isInitialized) {
+                        this.extendSession();
+                    }
+                });
+
+                // Handle page focus to refresh data
+                window.addEventListener('focus', () => {
+                    if (this.isInitialized) {
+                        this.refreshUserData();
+                    }
+                });
+            }
+
+            updateDashboard() {
+                if (!this.userData) return;
+
+                try {
+                    // Update header information
+                    this.updateElement('welcome-text', `Welcome ${this.userData.id}`);
+                    this.updateElement('company-name', this.userData.name);
+                    this.updateElement('user-id', this.userData.id);
+                    this.updateElement('user-email', this.userData.email);
+                    this.updateElement('account-status', this.userData.status);
+
+                    // Update total income banner
+                    this.updateElement('total-income-amount', `₹${this.userData.totalIncome.toFixed(2)}`);
+
+                    // Update dashboard cards
+                    const updates = {
+                        'team-total': this.userData.teamTotal || 3,
+                        'user-rank': this.userData.rank || 'Newcomer',
+                        'referrals-count': this.userData.referrals || 3,
+                        'active-directs': this.userData.activeDirects || 3,
+                        'daily-income': `₹${(this.userData.dailyIncome || 15).toFixed(2)}`,
+                        'daily-balance': (this.userData.dailyBalance || 175).toFixed(2),
+                        'daily-team-income': `₹${(this.userData.dailyTeamIncome || 0).toFixed(2)}`,
+                        'team-earnings': (this.userData.teamEarnings || 175).toFixed(2),
+                        'rank-rewards': `₹${(this.userData.rankRewards || 0).toFixed(2)}`,
+                        'current-rank': this.userData.currentRank || 'Newcomer',
+                        'next-rank': this.userData.nextRank || 'BRONZE',
+                        'self-income': `₹${(this.userData.selfIncome || 10).toFixed(2)}`,
+                        'matrix-income': `₹${(this.userData.matrixIncome || 0).toFixed(2)}`,
+                        'direct-bonus': `₹${(this.userData.directBonus || 150).toFixed(2)}`,
+                        'income-wallet': `₹${(this.userData.incomeWallet || 175).toFixed(2)}`,
+                        'investment-wallet': `₹${(this.userData.investmentWallet || 5991.20).toFixed(2)}`,
+                        'crypto-wallet': `${(this.userData.cryptoWallet || 494.41).toFixed(2)} FLT Coin`
+                    };
+
+                    // Apply updates
+                    Object.entries(updates).forEach(([id, value]) => {
+                        this.updateElement(id, value);
+                    });
+
+                    console.log('Dashboard updated successfully');
+                } catch (error) {
+                    console.error('Error updating dashboard:', error);
+                }
+            }
+
+            updateElement(id, value) {
+                const element = document.getElementById(id);
+                if (element) {
+                    element.textContent = value;
+                } else {
+                    console.warn(`Element with id '${id}' not found`);
+                }
+            }
+
+            handleLogout() {
+                const confirmLogout = confirm('Are you sure you want to logout?');
+                
+                if (confirmLogout) {
+                    this.isLoggingOut = true;
+                    this.clearSessionAndRedirect();
+                }
+            }
+
+            clearSessionAndRedirect() {
+                // Clear all session data
+                localStorage.removeItem('userData');
+                localStorage.removeItem('isLoggedIn');
+                localStorage.removeItem('sessionActive');
+                localStorage.removeItem('loginTime');
+                localStorage.clear(); // Clear everything to be safe
+
+                console.log('Session cleared, redirecting to home');
+
+                // Show logout message
+                this.showNotification('Logged out successfully', 'success');
+
+                // Redirect after a short delay
+                setTimeout(() => {
+                    window.location.href = 'index.html';
+                }, 1000);
+            }
+
+            redirectToLogin() {
+                console.log('Redirecting to login page');
+                setTimeout(() => {
+                    window.location.href = 'index.html';
+                }, 500);
+            }
+
+            extendSession() {
+                const currentTime = new Date().getTime();
+                localStorage.setItem('loginTime', currentTime.toString());
+                console.log('Session extended');
+            }
+
+            refreshUserData() {
+                // In a real app, this would fetch fresh data from the server
+                console.log('Refreshing user data');
+                this.extendSession();
+            }
+
+            showNotification(message, type = 'info') {
+                const notification = document.createElement('div');
+                notification.className = `notification notification-${type}`;
+                notification.innerHTML = `
+                    <div class="notification-content">
+                        <i class="fas fa-${type === 'success' ? 'check-circle' : type === 'error' ? 'exclamation-circle' : 'info-circle'}"></i>
+                        <span>${message}</span>
+                    </div>
+                `;
+
+                notification.style.cssText = `
+                    position: fixed;
+                    top: 20px;
+                    right: 20px;
+                    background: ${type === 'success' ? '#4CAF50' : type === 'error' ? '#f44336' : '#2196F3'};
+                    color: white;
+                    padding: 15px 20px;
+                    border-radius: 8px;
+                    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+                    z-index: 10000;
+                    display: flex;
+                    align-items: center;
+                    gap: 10px;
+                    transform: translateX(100%);
+                    transition: transform 0.3s ease;
+                    max-width: 300px;
+                `;
+
+                document.body.appendChild(notification);
+
+                setTimeout(() => {
+                    notification.style.transform = 'translateX(0)';
+                }, 100);
+
+                setTimeout(() => {
+                    notification.style.transform = 'translateX(100%)';
+                    setTimeout(() => {
+                        if (document.body.contains(notification)) {
+                            document.body.removeChild(notification);
+                        }
+                    }, 300);
+                }, 3000);
+            }
+        }
+
+        // Initialize secure dashboard when DOM is loaded
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('DOM loaded, initializing secure dashboard');
+            window.secureDashboard = new SecureDashboard();
+        });
+
+        // Prevent back button after logout
+        window.addEventListener('pageshow', function(event) {
+            if (event.persisted) {
+                window.location.reload();
+            }
+        });
+    </script>
+</body>
+</html>

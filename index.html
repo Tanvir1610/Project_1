@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For Life Trading India - MLM Platform</title>
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <i class="fas fa-chart-line"></i>
+                <span>For Life Trading</span>
+            </div>
+            <div class="nav-menu" id="nav-menu">
+                <a href="#home" class="nav-link">Home</a>
+                <a href="#about" class="nav-link">About</a>
+                <a href="#how-it-works" class="nav-link">How It Works</a>
+                <a href="#plans" class="nav-link">Plans</a>
+                <a href="#referral" class="nav-link">Referral</a>
+                <a href="#contact" class="nav-link">Contact</a>
+                <div class="nav-auth">
+                    <button class="btn-secondary" onclick="showModal('loginModal')">Login</button>
+                    <button class="btn-primary" onclick="showModal('registerModal')">Register</button>
+                </div>
+            </div>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="particles" id="particles"></div>
+        <div class="hero-content">
+            <h1 class="hero-title">
+                <span class="gradient-text">Creating Wealth</span>
+                <br>through Smart MLM
+            </h1>
+            <p class="hero-subtitle">Join the future of network marketing with guaranteed returns and unlimited earning potential</p>
+            <div class="hero-stats">
+                <div class="stat-item">
+                    <span class="stat-number" data-target="50000">0</span>
+                    <span class="stat-label">Active Members</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number" data-target="2500000">0</span>
+                    <span class="stat-label">Total Earnings ($ & ₹)</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number" data-target="99">0</span>
+                    <span class="stat-label">Success Rate (%)</span>
+                </div>
+            </div>
+            <div class="hero-buttons">
+                <button class="btn-primary btn-large" onclick="showModal('registerModal')">
+                    <i class="fas fa-rocket"></i> Start Earning Now
+                </button>
+                <button class="btn-secondary btn-large" onclick="scrollToSection('how-it-works')">
+                    <i class="fas fa-play"></i> How It Works
+                </button>
+            </div>
+        </div>
+        <div class="hero-visual">
+            <div class="floating-card">
+                <i class="fas fa-dollar-sign"></i>
+                <span>Daily Income</span>
+                <div class="amount">40₹</div>
+            </div>
+            <div class="floating-card">
+                <i class="fas fa-users"></i>
+                <span>Direct Sponsor</span>
+                <div class="amount">240₹</div>
+            </div>
+            <div class="floating-card">
+                <i class="fas fa-layer-group"></i>
+                <span>Level Income</span>
+                <div class="amount">8 Levels</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">About For Life Trading India</h2>
+                <p class="section-subtitle">Revolutionizing network marketing with transparency and guaranteed returns</p>
+            </div>
+            
+            <div class="about-content">
+                <div class="about-text">
+                    <div class="vision-mission">
+                        <div class="vm-item">
+                            <div class="vm-icon">
+                                <i class="fas fa-eye"></i>
+                            </div>
+                            <h3>Our Vision</h3>
+                            <p>To create a sustainable ecosystem where every member achieves financial freedom through smart network marketing strategies.</p>
+                        </div>
+                        <div class="vm-item">
+                            <div class="vm-icon">
+                                <i class="fas fa-target"></i>
+                            </div>
+                            <h3>Our Mission</h3>
+                            <p>Empowering individuals with transparent, profitable, and ethical MLM opportunities backed by cutting-edge technology.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="currency-evolution">
+                    <h3>Evolution of Currency</h3>
+                    <div class="timeline">
+                        <div class="timeline-item active" data-era="barter">
+                            <div class="timeline-icon">
+                                <i class="fas fa-handshake"></i>
+                            </div>
+                            <h4>Barter System</h4>
+                            <p>Exchange of goods and services</p>
+                        </div>
+                        <div class="timeline-item" data-era="coins">
+                            <div class="timeline-icon">
+                                <i class="fas fa-coins"></i>
+                            </div>
+                            <h4>Metal Coins</h4>
+                            <p>Gold, silver, and copper currency</p>
+                        </div>
+                        <div class="timeline-item" data-era="paper">
+                            <div class="timeline-icon">
+                                <i class="fas fa-money-bill"></i>
+                            </div>
+                            <h4>Paper Money</h4>
+                            <p>Government-backed currency notes</p>
+                        </div>
+                        <div class="timeline-item" data-era="digital">
+                            <div class="timeline-icon">
+                                <i class="fas fa-credit-card"></i>
+                            </div>
+                            <h4>Digital Payment</h4>
+                            <p>Electronic transactions and cards</p>
+                        </div>
+                        <div class="timeline-item" data-era="crypto">
+                            <div class="timeline-icon">
+                                <i class="fab fa-bitcoin"></i>
+                            </div>
+                            <h4>Cryptocurrency</h4>
+                            <p>Decentralized digital currency</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section id="how-it-works" class="how-it-works">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">How It Works</h2>
+                <p class="section-subtitle">Multiple income streams designed for maximum earning potential</p>
+            </div>
+            
+            <div class="income-types">
+                <div class="income-card" onclick="showIncomeDetails('direct')">
+                    <div class="income-icon">
+                        <i class="fas fa-user-plus"></i>
+                    </div>
+                    <h3>Direct Sponsor Income</h3>
+                    <div class="income-amount">$3.00</div>
+                    <p>Earn $3 for every direct referral</p>
+                    <div class="hover-overlay">
+                        <i class="fas fa-info-circle"></i>
+                        <span>Click for details</span>
+                    </div>
+                </div>
+                
+                <div class="income-card" onclick="showIncomeDetails('level')">
+                    <div class="income-icon">
+                        <i class="fas fa-layer-group"></i>
+                    </div>
+                    <h3>Level Income</h3>
+                    <div class="income-amount">8 Levels</div>
+                    <p>Earn from 8 levels deep</p>
+                    <div class="hover-overlay">
+                        <i class="fas fa-info-circle"></i>
+                        <span>Click for details</span>
+                    </div>
+                </div>
+                
+                <div class="income-card" onclick="showIncomeDetails('matrix')">
+                    <div class="income-icon">
+                        <i class="fas fa-th"></i>
+                    </div>
+                    <h3>Matrix Income</h3>
+                    <div class="income-amount">7 Levels</div>
+                    <p>Matrix-based earning system</p>
+                    <div class="hover-overlay">
+                        <i class="fas fa-info-circle"></i>
+                        <span>Click for details</span>
+                    </div>
+                </div>
+                
+                <div class="income-card" onclick="showIncomeDetails('daily')">
+                    <div class="income-icon">
+                        <i class="fas fa-calendar-day"></i>
+                    </div>
+                    <h3>Daily Self Income</h3>
+                    <div class="income-amount">$0.50</div>
+                    <p>Guaranteed daily earnings</p>
+                    <div class="hover-overlay">
+                        <i class="fas fa-info-circle"></i>
+                        <span>Click for details</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Investment Plans Section -->
+    <section id="plans" class="plans">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Investment Plans</h2>
+                <p class="section-subtitle">Choose your investment level and start earning immediately</p>
+            </div>
+            
+            <section id="plans" class="plans">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <h2>Flexible Investment Plans</h2>
+                <p>Choose your investment amount and plan type for optimal returns</p>
+            </div>
+
+            <!-- Investment Calculator -->
+            <div class="investment-calculator" data-aos="fade-up" data-aos-delay="200">
+                <div class="calculator-card">
+                    <h3><i class="fas fa-calculator"></i> Investment Calculator</h3>
+                    
+                    <div class="calculator-controls">
+                        <!-- Amount Selection -->
+                        <div class="amount-input-container">
+                            <label for="investmentAmount">Investment Amount</label>
+                            <div class="amount-range">
+                                <span>$20</span>
+                                <input type="range" id="investmentSlider" min="20" max="1000" value="100" step="10" oninput="forLifeTradingApp.updateSlider()">
+                                <span>$1000</span>
+                            </div>
+                            <div class="amount-input-wrapper">
+                                <span class="currency-symbol">$</span>
+                                <input type="number" id="investmentAmount" min="20" max="1000" value="100" step="10" oninput="forLifeTradingApp.calculateROI()">
+                            </div>
+                        </div>
+
+                        <!-- Plan Selection -->
+                        <div class="plan-options">
+                            <label>Select Plan Type</label>
+                            
+                            <div class="plan-option selected" data-plan="starter" onclick="forLifeTradingApp.selectPlanType('starter')">
+                                <input type="radio" id="starter" name="planType" value="starter" checked>
+                                <label for="starter">
+                                    <div>
+                                        <div class="plan-name">Starter Plan</div>
+                                        <div class="plan-description">Perfect for beginners</div>
+                                    </div>
+                                    <div class="plan-roi">7% Daily</div>
+                                </label>
+                            </div>
+
+                            <div class="plan-option" data-plan="professional" onclick="forLifeTradingApp.selectPlanType('professional')">
+                                <input type="radio" id="professional" name="planType" value="professional">
+                                <label for="professional">
+                                    <div>
+                                        <div class="plan-name">Professional Plan</div>
+                                        <div class="plan-description">For experienced investors</div>
+                                    </div>
+                                    <div class="plan-roi">8% Daily</div>
+                                </label>
+                            </div>
+
+                            <div class="plan-option" data-plan="enterprise" onclick="forLifeTradingApp.selectPlanType('enterprise')">
+                                <input type="radio" id="enterprise" name="planType" value="enterprise">
+                                <label for="enterprise">
+                                    <div>
+                                        <div class="plan-name">Enterprise Plan</div>
+                                        <div class="plan-description">Maximum returns</div>
+                                    </div>
+                                    <div class="plan-roi">10% Daily</div>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Results Display -->
+                    <div class="calculator-results">
+                        <h4>Expected Returns</h4>
+                        <div class="result-grid">
+                            <div class="result-item">
+                                <div class="result-label">Daily Return</div>
+                                <div class="result-value" id="dailyReturn">$7.00</div>
+                            </div>
+                            <div class="result-item">
+                                <div class="result-label">Weekly Return</div>
+                                <div class="result-value" id="weeklyReturn">$49.00</div>
+                            </div>
+                            <div class="result-item">
+                                <div class="result-label">Monthly Return</div>
+                                <div class="result-value" id="monthlyReturn">$210.00</div>
+                            </div>
+                            <div class="result-item">
+                                <div class="result-label">ROI Rate</div>
+                                <div class="result-value" id="roiPercentage">7%</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Investment Action -->
+                    <div class="investment-action">
+                        <button class="btn-primary btn-large" id="investNowBtn" onclick="proceedWithInvestment()">
+                            <i class="fas fa-rocket"></i> Invest $100 - Starter
+                        </button>
+                        <div class="investment-note">
+                            <i class="fas fa-info-circle"></i>
+                            Minimum investment: $20 | Maximum investment: $1000
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Plans Comparison -->
+            <div class="plans-comparison" data-aos="fade-up" data-aos-delay="400">
+                <h3>Plan Comparison</h3>
+                <div class="comparison-table">
+                    <div class="comparison-header">
+                        <div class="feature-column">Features</div>
+                        <div class="plan-column">Starter (7%)</div>
+                        <div class="plan-column">Professional (8%)</div>
+                        <div class="plan-column">Enterprise (10%)</div>
+                    </div>
+                    <div class="comparison-row">
+                        <div class="feature-name">Investment Range</div>
+                        <div class="feature-value">$20 - $1000</div>
+                        <div class="feature-value">$20 - $1000</div>
+                        <div class="feature-value">$20 - $1000</div>
+                    </div>
+                    <div class="comparison-row">
+                        <div class="feature-name">Daily ROI</div>
+                        <div class="feature-value text-success">7%</div>
+                        <div class="feature-value text-success">8%</div>
+                        <div class="feature-value text-success">10%</div>
+                    </div>
+                    <div class="comparison-row">
+                        <div class="feature-name">Direct Referral Bonus</div>
+                        <div class="feature-value">$3.00</div>
+                        <div class="feature-value">$3.00</div>
+                        <div class="feature-value">$3.00</div>
+                    </div>
+                    <div class="comparison-row">
+                        <div class="feature-name">Level Income</div>
+                        <div class="feature-value">8 Levels</div>
+                        <div class="feature-value">8 Levels</div>
+                        <div class="feature-value">8 Levels</div>
+                    </div>
+                    <div class="comparison-row">
+                        <div class="feature-name">Matrix Income</div>
+                        <div class="feature-value">7 Levels</div>
+                        <div class="feature-value">7 Levels</div>
+                        <div class="feature-value">7 Levels</div>
+                    </div>
+                    <div class="comparison-row">
+                        <div class="feature-name">Daily Self Income</div>
+                        <div class="feature-value">$0.50</div>
+                        <div class="feature-value">$0.50</div>
+                        <div class="feature-value">$0.50</div>
+                    </div>
+                    <div class="comparison-row">
+                        <div class="feature-name">Withdrawal</div>
+                        <div class="feature-value">Instant</div>
+                        <div class="feature-value">Instant</div>
+                        <div class="feature-value">Instant</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Referral System Section -->
+    <section id="referral" class="referral">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Referral System</h2>
+                <p class="section-subtitle">Build your network and earn from multiple levels</p>
+            </div>
+            
+            <div class="referral-tree">
+                <div class="tree-container">
+                    <div class="tree-node root" onclick="toggleNode(this)">
+                        <div class="node-content">
+                            <i class="fas fa-user"></i>
+                            <span>You</span>
+                            <div class="node-stats">
+                                <span>Level 0</span>
+                            </div>
+                        </div>
+                        <div class="node-children">
+                            <div class="tree-node" onclick="toggleNode(this)">
+                                <div class="node-content">
+                                    <i class="fas fa-user"></i>
+                                    <span>Direct Referral 1</span>
+                                    <div class="node-stats">
+                                        <span>Level 1 - $3</span>
+                                    </div>
+                                </div>
+                                <div class="node-children">
+                                    <div class="tree-node">
+                                        <div class="node-content">
+                                            <i class="fas fa-user"></i>
+                                            <span>Level 2</span>
+                                            <div class="node-stats">
+                                                <span>$1.50</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="tree-node">
+                                        <div class="node-content">
+                                            <i class="fas fa-user"></i>
+                                            <span>Level 2</span>
+                                            <div class="node-stats">
+                                                <span>$1.50</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tree-node" onclick="toggleNode(this)">
+                                <div class="node-content">
+                                    <i class="fas fa-user"></i>
+                                    <span>Direct Referral 2</span>
+                                    <div class="node-stats">
+                                        <span>Level 1 - $3</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="referral-benefits">
+                <div class="benefit-card">
+                    <i class="fas fa-trophy"></i>
+                    <h3>Achievement Rewards</h3>
+                    <p>Unlock special bonuses as you reach referral milestones</p>
+                </div>
+                <div class="benefit-card">
+                    <i class="fas fa-infinity"></i>
+                    <h3>Unlimited Potential</h3>
+                    <p>No cap on earnings - the more you refer, the more you earn</p>
+                </div>
+                <div class="benefit-card">
+                    <i class="fas fa-chart-line"></i>
+                    <h3>Passive Income</h3>
+                    <p>Earn from your network's activities continuously</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Get In Touch</h2>
+                <p class="section-subtitle">Have questions? We're here to help you succeed</p>
+            </div>
+            
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <h4>Email</h4>
+                            <p>vhoratanvir1610@gmail.com</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <div>
+                            <h4>Phone</h4>
+                            <p>+91 6354686821</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <h4>Address</h4>
+                            <p>Mumbai, Maharashtra, India</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="contact-form">
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <input type="text" placeholder="Your Name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" placeholder="Your Email" required>
+                        </div>
+                        <div class="form-group">
+                            <textarea placeholder="Your Message" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="btn-primary">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <i class="fas fa-chart-line"></i>
+                        <span>For Life Trading</span>
+                    </div>
+                    <p>Creating wealth through smart MLM strategies and transparent business practices.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#how-it-works">How It Works</a></li>
+                        <li><a href="#plans">Plans</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="#" onclick="showModal('termsModal')">Terms & Conditions</a></li>
+                        <li><a href="#" onclick="showModal('faqModal')">FAQ</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                        <li><a href="#" onclick="showModal('withdrawalModal')">Withdrawal Rules</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Contact Info</h4>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <span>vhoratanvir1610@gmail.com</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <span>+91 6354686821</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 For Life Trading India. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Login Modal -->
+    <div id="loginModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="hideModal('loginModal')">&times;</span>
+            <h2>Login</h2>
+            <form id="loginForm">
+                <div class="form-group">
+                    <input type="email" placeholder="Email" required>
+                </div>
+                <div class="form-group">
+                    <input type="password" placeholder="Password" required>
+                </div>
+                <button type="submit" class="btn-primary">Login</button>
+                <p>Don't have an account? <a href="#" onclick="hideModal('loginModal'); showModal('registerModal')">Register</a></p>
+            </form>
+        </div>
+    </div>
+
+    <!-- Register Modal -->
+    <div id="registerModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="hideModal('registerModal')">&times;</span>
+            <h2>Register</h2>
+            <form id="registerForm">
+                <div class="form-group">
+                    <input type="text" placeholder="Full Name" required>
+                </div>
+                <div class="form-group">
+                    <input type="email" placeholder="Email" required>
+                </div>
+                <div class="form-group">
+                    <input type="password" placeholder="Password" required>
+                </div>
+                <div class="form-group">
+                    <input type="text" id="referralCode" placeholder="Referral Code (Optional)">
+                </div>
+                <button type="submit" class="btn-primary">Register</button>
+                <p>Already have an account? <a href="#" onclick="hideModal('registerModal'); showModal('loginModal')">Login</a></p>
+            </form>
+        </div>
+    </div>
+
+    <!-- WhatsApp Float Button -->
+    <div class="whatsapp-float">
+        <a href="https://wa.me/916354686821" target="_blank">
+            <i class="fab fa-whatsapp"></i>
+        </a>
+    </div>
+
+    <!-- Mobile Bottom Navigation -->
+    <div class="mobile-nav">
+        <a href="#home"><i class="fas fa-home"></i><span>Home</span></a>
+        <a href="#plans"><i class="fas fa-chart-bar"></i><span>Plans</span></a>
+        <a href="#referral"><i class="fas fa-users"></i><span>Referral</span></a>
+        <a href="#contact"><i class="fas fa-envelope"></i><span>Contact</span></a>
+    </div>
+
+    <script src="js/main.js"></script>
+    <script src="js/animations.js"></script>
+    <script src="js/modals.js"></script>
+    <script src="js/auth.js"></script>
+</body>
+</html>

@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment - For Life Trading India</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/payment.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <i class="fas fa-chart-line"></i>
+                <span>For Life Trading</span>
+            </div>
+            <div class="nav-menu">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="dashboard.html" class="nav-link">Dashboard</a>
+                <div class="nav-auth">
+                    <button class="btn-secondary" onclick="window.location.href='index.html'">Back</button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Payment Section -->
+    <section class="payment-section">
+        <div class="container">
+            <div class="payment-container">
+                <!-- Payment Header -->
+                <div class="payment-header">
+                    <h1>Complete Your Investment</h1>
+                    <p>Secure payment via UPI QR Code</p>
+                </div>
+
+                <!-- Payment Details -->
+                <div class="payment-content">
+                    <div class="payment-summary">
+                        <div class="summary-card">
+                            <h3>Investment Summary</h3>
+                            <div class="summary-item">
+                                <span>Selected Plan:</span>
+                                <span id="selectedPlan">Professional</span>
+                            </div>
+                            <div class="summary-item">
+                                <span>Investment Amount:</span>
+                                <span id="investmentAmount">$100.00</span>
+                            </div>
+                            <div class="summary-item">
+                                <span>Daily ROI:</span>
+                                <span id="dailyROI">8%</span>
+                            </div>
+                            <div class="summary-item">
+                                <span>Expected Daily Return:</span>
+                                <span id="dailyReturn">$8.00</span>
+                            </div>
+                            <div class="summary-divider"></div>
+                            <div class="summary-item total">
+                                <span>Total Amount to Pay:</span>
+                                <span id="totalAmount">$100.00</span>
+                            </div>
+                        </div>
+
+                        <div class="payment-benefits">
+                            <h4>What You Get:</h4>
+                            <ul>
+                                <li><i class="fas fa-check"></i> Daily Self Income: $0.50</li>
+                                <li><i class="fas fa-check"></i> Direct Sponsor Bonus: $3.00</li>
+                                <li><i class="fas fa-check"></i> Level Income: 8 Levels</li>
+                                <li><i class="fas fa-check"></i> Matrix Income: 7 Levels</li>
+                                <li><i class="fas fa-check"></i> 24/7 Support</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="payment-qr">
+                        <div class="qr-container">
+                            <div class="qr-header">
+                                <h3>Scan QR Code to Pay</h3>
+                                <p>Use any UPI app to scan and pay</p>
+                            </div>
+                            
+                            <div class="qr-code">
+                                <img src="Software/images/WhatsApp Image 2024-11-17 at 09.55.58_de18bed2.jpg" alt="Payment QR Code" id="paymentQR">
+                            </div>
+                            
+                            <div class="payment-info">
+                                <div class="upi-id">
+                                    <i class="fas fa-mobile-alt"></i>
+                                    <span>UPI ID: 6354686821@pthdfc</span>
+                                    <button onclick="copyUPIId()" class="copy-btn">
+                                        <i class="fas fa-copy"></i>
+                                    </button>
+                                </div>
+                                
+                                <div class="payment-name">
+                                    <i class="fas fa-user"></i>
+                                    <span>Vahora Tanvir Ahmad</span>
+                                </div>
+                            </div>
+
+                            <div class="payment-apps">
+                                <p>Supported Apps:</p>
+                                <div class="app-icons">
+                                    <img src="https://logos-world.net/wp-content/uploads/2020/11/Paytm-Logo.png" alt="Paytm">
+                                    <img src="https://logos-world.net/wp-content/uploads/2021/02/Google-Pay-Logo.png" alt="Google Pay">
+                                    <img src="https://logos-world.net/wp-content/uploads/2020/11/PhonePe-Logo.png" alt="PhonePe">
+                                    <img src="https://upload.wikimedia.org/wikipedia/commons/e/e1/UPI-Logo-vector.svg" alt="UPI">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="payment-actions">
+                            <button class="btn-primary" onclick="confirmPayment()">
+                                <i class="fas fa-check-circle"></i>
+                                I Have Made the Payment
+                            </button>
+                            <button class="btn-secondary" onclick="cancelPayment()">
+                                <i class="fas fa-times"></i>
+                                Cancel Payment
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Payment Instructions -->
+                <div class="payment-instructions">
+                    <h3>Payment Instructions</h3>
+                    <div class="instruction-steps">
+                        <div class="step">
+                            <div class="step-number">1</div>
+                            <div class="step-content">
+                                <h4>Open UPI App</h4>
+                                <p>Open any UPI enabled app like Paytm, Google Pay, PhonePe, etc.</p>
+                            </div>
+                        </div>
+                        <div class="step">
+                            <div class="step-number">2</div>
+                            <div class="step-content">
+                                <h4>Scan QR Code</h4>
+                                <p>Use the scan option in your app to scan the QR code above</p>
+                            </div>
+                        </div>
+                        <div class="step">
+                            <div class="step-number">3</div>
+                            <div class="step-content">
+                                <h4>Enter Amount</h4>
+                                <p>Enter the exact amount shown in the summary</p>
+                            </div>
+                        </div>
+                        <div class="step">
+                            <div class="step-number">4</div>
+                            <div class="step-content">
+                                <h4>Complete Payment</h4>
+                                <p>Complete the payment and click "I Have Made the Payment" button</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Payment Confirmation Modal -->
+    <div id="paymentConfirmModal" class="modal">
+        <div class="modal-content">
+            <div class="confirmation-content">
+                <div class="success-icon">
+                    <i class="fas fa-check-circle"></i>
+                </div>
+                <h2>Payment Confirmation</h2>
+                <p>Please provide your transaction details to complete the process</p>
+                
+                <form id="paymentConfirmForm">
+                    <div class="form-group">
+                        <label>Transaction ID</label>
+                        <input type="text" placeholder="Enter UPI Transaction ID" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Amount Paid</label>
+                        <input type="number" id="paidAmount" readonly>
+                    </div>
+                    <div class="form-group">
+                        <label>Payment Screenshot (Optional)</label>
+                        <input type="file" accept="image/*">
+                        <small>Upload payment screenshot for faster verification</small>
+                    </div>
+                    <div class="form-actions">
+                        <button type="submit" class="btn-primary">Submit for Verification</button>
+                        <button type="button" class="btn-secondary" onclick="hideModal('paymentConfirmModal')">Cancel</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/main.js"></script>
+    <script src="js/payment.js"></script>
+</body>
+</html>

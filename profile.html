@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile - For Life Trading India</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="stylesheet" href="css/profile.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Dashboard Navigation -->
+    <nav class="dashboard-nav">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <i class="fas fa-chart-line"></i>
+                <span>For Life Trading</span>
+            </div>
+            <div class="nav-user">
+                <div class="user-info">
+                    <span class="user-name">John Doe</span>
+                    <span class="user-id">ID: FLT001234</span>
+                </div>
+                <div class="user-avatar">
+                    <img id="navUserAvatar" src="/placeholder.svg?height=40&width=40" alt="User Avatar">
+                </div>
+                <div class="user-menu">
+                    <a href="dashboard.html"><i class="fas fa-tachometer-alt"></i> Dashboard</a>
+                    <a href="#" onclick="showModal('settingsModal')"><i class="fas fa-cog"></i> Settings</a>
+                    <a href="index.html"><i class="fas fa-sign-out-alt"></i> Logout</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Profile Main Content -->
+    <main class="profile-main">
+        <div class="profile-container">
+            <div class="profile-header">
+                <h1>My Profile</h1>
+                <p>Manage your account information and documents</p>
+            </div>
+
+            <div class="profile-content">
+                <!-- Profile Information Section -->
+                <div class="profile-section">
+                    <div class="section-header">
+                        <h2>Profile Information</h2>
+                        <button class="btn-secondary" onclick="toggleEditMode()">
+                            <i class="fas fa-edit"></i> Edit Profile
+                        </button>
+                    </div>
+
+                    <div class="profile-card">
+                        <div class="profile-avatar-section">
+                            <div class="avatar-container">
+                                <img id="profileAvatar" src="/placeholder.svg?height=120&width=120" alt="Profile Avatar">
+                                <div class="avatar-overlay" onclick="triggerAvatarUpload()">
+                                    <i class="fas fa-camera"></i>
+                                    <span>Change Photo</span>
+                                </div>
+                                <input type="file" id="avatarUpload" accept="image/*" style="display: none;">
+                            </div>
+                            <div class="upload-progress-container" style="display: none;">
+                                <div class="upload-progress"></div>
+                            </div>
+                        </div>
+
+                        <div class="profile-form">
+                            <form id="profileForm">
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label>Full Name</label>
+                                        <input type="text" id="fullName" value="John Doe" readonly>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Email</label>
+                                        <input type="email" id="email" value="john.doe@example.com" readonly>
+                                    </div>
+                                </div>
+
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label>Phone Number</label>
+                                        <input type="tel" id="phone" value="+91 9876543210" readonly>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Date of Birth</label>
+                                        <input type="date" id="dob" value="1990-01-01" readonly>
+                                    </div>
+                                </div>
+
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label>Address</label>
+                                        <textarea id="address" rows="3" readonly>123 Main Street, Mumbai, Maharashtra, India</textarea>
+                                    </div>
+                                </div>
+
+                                <div class="form-actions" style="display: none;">
+                                    <button type="submit" class="btn-primary">Save Changes</button>
+                                    <button type="button" class="btn-secondary" onclick="cancelEdit()">Cancel</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- KYC Documents Section -->
+                <div class="profile-section">
+                    <div class="section-header">
+                        <h2>KYC Documents</h2>
+                        <div class="kyc-status">
+                            <span class="status-badge pending">Pending Verification</span>
+                        </div>
+                    </div>
+
+                    <div class="kyc-documents">
+                        <div class="document-card">
+                            <div class="document-header">
+                                <div class="document-info">
+                                    <i class="fas fa-id-card"></i>
+                                    <div>
+                                        <h3>PAN Card</h3>
+                                        <p>Upload your PAN card for verification</p>
+                                    </div>
+                                </div>
+                                <div class="document-status">
+                                    <span class="status-badge not-uploaded">Not Uploaded</span>
+                                </div>
+                            </div>
+                            <div class="document-upload">
+                                <input type="file" id="panUpload" accept="image/*,.pdf" style="display: none;">
+                                <button class="upload-btn" onclick="triggerFileUpload('panUpload', 'pan')">
+                                    <i class="fas fa-upload"></i> Upload PAN Card
+                                </button>
+                                <div class="upload-progress-container" style="display: none;">
+                                    <div class="upload-progress"></div>
+                                </div>
+                            </div>
+                            <div class="document-preview" id="panPreview" style="display: none;"></div>
+                        </div>
+
+                        <div class="document-card">
+                            <div class="document-header">
+                                <div class="document-info">
+                                    <i class="fas fa-address-card"></i>
+                                    <div>
+                                        <h3>Aadhaar Card</h3>
+                                        <p>Upload your Aadhaar card for verification</p>
+                                    </div>
+                                </div>
+                                <div class="document-status">
+                                    <span class="status-badge not-uploaded">Not Uploaded</span>
+                                </div>
+                            </div>
+                            <div class="document-upload">
+                                <input type="file" id="aadhaarUpload" accept="image/*,.pdf" style="display: none;">
+                                <button class="upload-btn" onclick="triggerFileUpload('aadhaarUpload', 'aadhaar')">
+                                    <i class="fas fa-upload"></i> Upload Aadhaar Card
+                                </button>
+                                <div class="upload-progress-container" style="display: none;">
+                                    <div class="upload-progress"></div>
+                                </div>
+                            </div>
+                            <div class="document-preview" id="aadhaarPreview" style="display: none;"></div>
+                        </div>
+
+                        <div class="document-card">
+                            <div class="document-header">
+                                <div class="document-info">
+                                    <i class="fas fa-university"></i>
+                                    <div>
+                                        <h3>Bank Statement</h3>
+                                        <p>Upload recent bank statement</p>
+                                    </div>
+                                </div>
+                                <div class="document-status">
+                                    <span class="status-badge not-uploaded">Not Uploaded</span>
+                                </div>
+                            </div>
+                            <div class="document-upload">
+                                <input type="file" id="bankUpload" accept="image/*,.pdf" style="display: none;">
+                                <button class="upload-btn" onclick="triggerFileUpload('bankUpload', 'bank')">
+                                    <i class="fas fa-upload"></i> Upload Bank Statement
+                                </button>
+                                <div class="upload-progress-container" style="display: none;">
+                                    <div class="upload-progress"></div>
+                                </div>
+                            </div>
+                            <div class="document-preview" id="bankPreview" style="display: none;"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- File Manager Section -->
+                <div class="profile-section">
+                    <div class="section-header">
+                        <h2>My Files</h2>
+                        <div class="file-filters">
+                            <button class="filter-btn active" onclick="filterFiles('all')">All</button>
+                            <button class="filter-btn" onclick="filterFiles('profile')">Profile</button>
+                            <button class="filter-btn" onclick="filterFiles('kyc')">KYC</button>
+                            <button class="filter-btn" onclick="filterFiles('payment')">Payments</button>
+                        </div>
+                    </div>
+
+                    <div class="file-manager">
+                        <div class="file-grid" id="fileGrid">
+                            <!-- Files will be loaded dynamically -->
+                        </div>
+                        <div class="file-manager-empty" id="fileManagerEmpty" style="display: none;">
+                            <i class="fas fa-folder-open"></i>
+                            <p>No files uploaded yet</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- File Preview Modal -->
+    <div id="filePreviewModal" class="modal">
+        <div class="modal-content file-preview-content">
+            <span class="close" onclick="hideModal('filePreviewModal')">&times;</span>
+            <div class="file-preview-header">
+                <h3 id="previewFileName">File Preview</h3>
+                <div class="file-actions">
+                    <button class="btn-secondary" onclick="downloadFile()">
+                        <i class="fas fa-download"></i> Download
+                    </button>
+                    <button class="btn-danger" onclick="deleteFile()">
+                        <i class="fas fa-trash"></i> Delete
+                    </button>
+                </div>
+            </div>
+            <div class="file-preview-body" id="filePreviewBody">
+                <!-- File content will be loaded here -->
+            </div>
+        </div>
+    </div>
+
+    <script src="js/main.js"></script>
+    <script src="js/blob-storage.js"></script>
+    <script src="js/profile.js"></script>
+    <script src="js/auth.js"></script>
+</body>
+</html>
