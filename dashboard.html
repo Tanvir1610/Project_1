@@ -15,9 +15,9 @@
         <header class="dashboard-header">
             <div class="header-content">
                 <div class="header-left">
-                    <div class="menu-icon" id="mobile-menu-btn">
+                    <!-- <div class="menu-icon" id="mobile-menu-btn">
                         <i class="fas fa-bars"></i>
-                    </div>
+                    </div> -->
                     <h1 class="dashboard-title">Dashboard</h1>
                 </div>
                 <div class="header-right">
@@ -34,6 +34,32 @@
                 </div>
             </div>
         </header>
+
+        <!-- Mobile Dashboard Sidebar -->
+        <nav class="mobile-dashboard-sidebar" id="mobile-dashboard-sidebar">
+            <div class="sidebar-header">
+                <h2 class="sidebar-title">Menu</h2>
+                <button class="close-sidebar-btn" id="close-sidebar-btn">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <ul class="sidebar-menu">
+                <li><a href="dashboard.html" class="sidebar-menu-item active"><i class="fas fa-home"></i> <span>Dashboard</span></a></li>
+                <li><a href="#" class="sidebar-menu-item"><i class="fas fa-users"></i> <span>My Team</span></a></li>
+                <li><a href="#" class="sidebar-menu-item"><i class="fas fa-user-plus"></i> <span>My Direct</span></a></li>
+                <li><a href="#" class="sidebar-menu-item"><i class="fas fa-dollar-sign"></i> <span>Income Details</span></a></li>
+                <li><a href="#" class="sidebar-menu-item"><i class="fas fa-wallet"></i> <span>Wallets</span></a></li>
+                <li><a href="#" class="sidebar-menu-item"><i class="fas fa-trophy"></i> <span>Rank Rewards</span></a></li>
+                <li><a href="profile.html" class="sidebar-menu-item"><i class="fas fa-user-circle"></i> <span>Profile</span></a></li>
+                <li><a href="file-manager.html" class="sidebar-menu-item"><i class="fas fa-folder"></i> <span>File Manager</span></a></li>
+                <li><a href="advance-file-manager.html" class="sidebar-menu-item"><i class="fas fa-file-alt"></i> <span>Advance File Manager</span></a></li>
+                <li><a href="payment.html" class="sidebar-menu-item"><i class="fas fa-credit-card"></i> <span>Payment</span></a></li>
+                <li><button class="sidebar-menu-item logout-btn-mobile" id="logout-btn-mobile"><i class="fas fa-sign-out-alt"></i> <span>Logout</span></button></li>
+            </ul>
+        </nav>
+
+        <!-- Overlay for mobile sidebar -->
+        <div class="mobile-sidebar-overlay" id="mobile-sidebar-overlay"></div>
 
         <!-- User Info Section -->
         <div class="user-info-section">

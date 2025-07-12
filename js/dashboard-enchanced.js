@@ -118,23 +118,54 @@ class DashboardManager {
     const sellBtn = document.querySelector(".sell-btn")
 
     if (buyBtn) {
-      buyBtn.addEventListener("click", () => this.handleCryptoAction("buy"))
+      buyBtn.addEventListener("click", () => this.showToast("Buy crypto functionality coming soon!", "info"))
     }
 
     if (sellBtn) {
-      sellBtn.addEventListener("click", () => this.handleCryptoAction("sell"))
+      sellBtn.addEventListener("click", () => this.showToast("Sell crypto functionality coming soon!", "info"))
     }
 
     // View more button
     const viewMoreBtn = document.querySelector(".view-more-btn")
     if (viewMoreBtn) {
-      viewMoreBtn.addEventListener("click", this.showRankDetails.bind(this))
+      viewMoreBtn.addEventListener("click", () => this.showToast("Rank details modal coming soon!", "info"))
+    }
+
+    // Mobile sidebar specific event listeners
+    const closeSidebarBtn = document.getElementById("close-sidebar-btn")
+    const mobileSidebar = document.getElementById("mobile-dashboard-sidebar")
+    const mobileSidebarOverlay = document.getElementById("mobile-sidebar-overlay")
+    const logoutBtnMobile = document.getElementById("logout-btn-mobile")
+
+    if (closeSidebarBtn) {
+      closeSidebarBtn.addEventListener("click", this.toggleMobileMenu.bind(this))
+    }
+    if (mobileSidebarOverlay) {
+      mobileSidebarOverlay.addEventListener("click", this.toggleMobileMenu.bind(this))
+    }
+    if (mobileSidebar) {
+      // Close sidebar when a menu item is clicked (if it's a link)
+      mobileSidebar.querySelectorAll(".sidebar-menu-item").forEach((item) => {
+        if (item.tagName === "A") {
+          item.addEventListener("click", this.toggleMobileMenu.bind(this))
+        }
+      })
+    }
+    if (logoutBtnMobile) {
+      logoutBtnMobile.addEventListener("click", this.handleLogout.bind(this))
     }
   }
 
   toggleMobileMenu() {
-    // Mobile menu functionality
-    this.showToast("Mobile menu functionality coming soon!", "info")
+    const mobileSidebar = document.getElementById("mobile-dashboard-sidebar")
+    const mobileSidebarOverlay = document.getElementById("mobile-sidebar-overlay")
+
+    if (mobileSidebar && mobileSidebarOverlay) {
+      mobileSidebar.classList.toggle("active")
+      mobileSidebarOverlay.classList.toggle("active")
+      // Prevent scrolling when sidebar is open
+      document.body.style.overflow = mobileSidebar.classList.contains("active") ? "hidden" : ""
+    }
   }
 
   handleCardHover(event) {
@@ -145,16 +176,6 @@ class DashboardManager {
   handleCardLeave(event) {
     const card = event.currentTarget
     card.style.transform = "translateY(0) scale(1)"
-  }
-
-  handleCryptoAction(action) {
-    const message =
-      action === "buy" ? "Buy crypto functionality coming soon!" : "Sell crypto functionality coming soon!"
-    this.showToast(message, "info")
-  }
-
-  showRankDetails() {
-    this.showToast("Rank details modal coming soon!", "info")
   }
 
   startRealTimeUpdates() {
